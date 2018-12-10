@@ -1,5 +1,5 @@
 #pragma once
-#include <Arduino.h>
+
 namespace Sort
 {
   namespace Utility
