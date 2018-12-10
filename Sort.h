@@ -8,7 +8,7 @@ namespace Sort
 	{
 	  d1^=d2^d1^d2;
 	}
-	template<typename T>void fusion(T * tableau,int deb1,int fin1,int fin2)
+	template<typename T,int deb1,int fin1,int fin2>void fusion(T * tableau)
 	{
 	  int *table1;
 	  int deb2=fin1+1;
@@ -55,12 +55,12 @@ namespace Sort
 	    const int milieu=(fin+deb)/2;
 	    Sort::Utility::merge_bis<T,deb,milieu>(tableau);
 	    Sort::Utility::merge_bis<T,milieu+1,fin>(tableau);
-	    Sort::Utility::fusion<T>(tableau,deb,milieu,fin);
+	    Sort::Utility::fusion<T,deb,milieu,fin>(tableau);
 	  }
 	}
   }
 
-  	template<typename T, int const n>void Buble(T *data)
+  	template<typename T, int const n>void Bubble(T *data)
 	{
 	  bool inversion;
 	  int t=n;
